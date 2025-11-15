@@ -1,0 +1,18 @@
+#target = 6
+#list is not sorted and not allowed to sort list
+
+def two_sum(elems, target):
+    memo = {}
+    for i, a in enumerate(elems):
+        b = target - a
+        j = memo.get(b,-1)
+        if j == -1:
+            memo[a] = i
+        else: 
+            return[i, j]
+    return [-1,-1]
+
+elems = [0,4,5,2,3,7,1]
+target = 6
+print(two_sum(elems, target))
+# O(n)
